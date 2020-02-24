@@ -90,7 +90,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -293,8 +293,8 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Find" sideWeight="0.4996496" weight="0.32916668" />
       <window_info anchor="bottom" id="Debug" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.4996496" visible="true" weight="0.32916668" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50035036" side_tool="true" visible="true" weight="0.32916668" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.4996496" visible="true" weight="0.7291667" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50035036" side_tool="true" weight="0.7152778" />
       <window_info anchor="bottom" id="Build" sideWeight="0.4996496" weight="0.32916668" />
       <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
