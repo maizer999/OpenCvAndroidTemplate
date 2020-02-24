@@ -10,24 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d15e35d-e20f-4a6c-922a-fbed5ba33e01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/test1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/release/arm64-v8a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/release/arm64-v8a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nativeopencvandroidtemplate/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nativeopencvandroidtemplate/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/test1.png" beforeDir="false" />
-    </list>
+    <list default="true" id="3d15e35d-e20f-4a6c-922a-fbed5ba33e01" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +261,7 @@
     <frame x="0" y="23" width="1469" height="812" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3293623" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3293623" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -292,7 +275,7 @@
       <window_info anchor="bottom" id="TODO" order="3" />
       <window_info anchor="bottom" id="Android Profiler" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4996496" weight="0.32916668" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4996496" visible="true" weight="0.49444443" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.4996496" visible="true" weight="0.49444443" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.32916668" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50035036" side_tool="true" weight="0.7152778" />
