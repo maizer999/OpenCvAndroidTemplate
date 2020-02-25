@@ -29,11 +29,14 @@ import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
+import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -47,24 +50,91 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    Mat img = null;
     public void applyFilter(View v){
-        Mat img = null;
+
 
         try {
-            img = Utils.loadResource(getApplicationContext(), R.drawable.test1);
+            img = Utils.loadResource(getApplicationContext(), R.drawable.test5);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2BGRA);
-
         Mat img_result = img.clone();
+        Mat img_result2 = img.clone();
+
         Imgproc.Canny(img, img_result, 80, 90);
-        Bitmap img_bitmap = Bitmap.createBitmap(img_result.cols(), img_result.rows(),Bitmap.Config.ARGB_8888);
-        Utils.matToBitmap(img_result, img_bitmap);
-        ImageView imageView = findViewById(R.id.img);
-        imageView.setImageBitmap(img_bitmap);
+        Bitmap img_bitmap = Bitmap.createBitmap(img_result2.cols(), img_result2.rows(),Bitmap.Config.RGB_565);
+        Bitmap img_bitmap2 = Bitmap.createBitmap(img_result2.cols(), img_result2.rows(),Bitmap.Config.ALPHA_8);
+
+//        Imgproc.cvtColor(img, new Mat(), Imgproc.COLOR_RGB2BGRA);
+
+        List<MatOfPoint> contours = new ArrayList<MatOfPoint>();
+        Imgproc .findContours(img_result, contours, new Mat(), Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
+        MatOfPoint2f approxCurve =  new MatOfPoint2f();
+
+
+        for (MatOfPoint cnt : contours) {
+
+            MatOfPoint2f curve = new MatOfPoint2f(cnt.toArray());
+            Imgproc.approxPolyDP(curve, approxCurve, 0.02 * Imgproc.arcLength(curve, true), true);
+            int numberVertices = (int) approxCurve.total();
+
+            double contourArea = Imgproc.contourArea(cnt);
+            Log.d("MAIZER  contourArea  ",""+contourArea);
+//            if (Math.abs(contourArea) > 1000) {
+//                continue;
+//            }
+
+            if (numberVertices >= 4 && numberVertices <= 6) {
+                List<Double> cos = new ArrayList<>();
+                for (int j = 2; j < numberVertices + 1; j++) {
+                    cos.add(angle(approxCurve.toArray()[j % numberVertices], approxCurve.toArray()[j - 2], approxCurve.toArray()[j - 1]));
+
+                }
+
+                Collections.sort(cos);
+                double mincos = cos.get(0);
+                double maxcos = cos.get(cos.size() - 1);
+
+                if (numberVertices == 4 && mincos >= -0.1 && maxcos <= 0.3) {
+                    Log.d("MAIZER  ",""+numberVertices);
+                    setLabel(img, "X", cnt);
+                    MatOfPoint matOfPoint = cnt;
+                    Rect rect = Imgproc.boundingRect(matOfPoint);
+                    Imgproc.rectangle(img_result2, rect.tl(), rect.br(), new Scalar(0, 255, 0));
+
+
+                }
+
+            }
+
+        }
+
+
+
+
+//        Utils.matToBitmap(img_result2, img_bitmap);
+//        ImageView imageView = findViewById(R.id.img);
+//        imageView.setImageBitmap(img_bitmap);
+    }
+
+    private void setLabel(Mat im, String label, MatOfPoint contour) {
+        int fontface = Imgproc.FONT_HERSHEY_SIMPLEX;
+        double scale = 3;//0.4;
+        int thickness = 10;//1;
+        int[] baseline = new int[1];
+        Size text = Imgproc.getTextSize(label, fontface, scale, thickness, baseline);
+        Rect r = Imgproc.boundingRect(contour);
+        Point pt = new Point(r.x + ((r.width - text.width) / 2),r.y + ((r.height + text.height) / 2));
+        Imgproc.putText(im, label, pt, fontface, scale, new Scalar(255, 0, 0), thickness);
+    }
+
+    private static double angle(Point pt1, Point pt2, Point pt0) {
+        double dx1 = pt1.x - pt0.x;
+        double dy1 = pt1.y - pt0.y;
+        double dx2 = pt2.x - pt0.x;
+        double dy2 = pt2.y - pt0.y;
+        return (dx1 * dx2 + dy1 * dy2) / Math.sqrt((dx1 * dx1 + dy1 * dy1) * (dx2 * dx2 + dy2 * dy2) + 1e-10);
     }
 
 
@@ -72,38 +142,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public void applyFilter(View v){
-//        Mat img = null;
-//
-//        try {
-//            img = Utils.loadResource(getApplicationContext(), R.drawable.test1);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Imgproc.cvtColor(img, img, Imgproc.COLOR_RGB2BGRA);
-//
-//        Mat img_result = img.clone();
-//        Imgproc.Canny(img, img_result, 80, 90);
-//        Bitmap img_bitmap = Bitmap.createBitmap(img_result.cols(), img_result.rows(),Bitmap.Config.ARGB_8888);
-//        Utils.matToBitmap(img_result, img_bitmap);
-//        ImageView imageView = findViewById(R.id.img);
-//        imageView.setImageBitmap(img_bitmap);
-//    }
